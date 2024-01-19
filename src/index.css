@@ -40,8 +40,7 @@ p {
   margin: 0px 20px;
 }
 
-.status,
-.users {
+.section-card {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;

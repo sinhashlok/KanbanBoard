@@ -21,15 +21,29 @@ const Status = (props) => {
       cancelled.push(item);
     }
   });
-  
 
   return (
-    <div className="status">
-      <Section status="Backlog" list={backlog} usersList={usersList} flow={flow}/>
-      <Section status="Todo" list={todo} usersList={usersList} flow={flow}/>
-      <Section status="In Progress" list={inProgress} usersList={usersList} flow={flow}/>
-      <Section status="Done" list={done} usersList={usersList} flow={flow}/>
-      <Section status="Cancelled" list={cancelled} usersList={usersList} flow={flow}/>
+    <div className="section-card">
+      <Section
+        status="Backlog"
+        list={backlog}
+        usersList={usersList}
+        flow={flow}
+      />
+      <Section status="Todo" list={todo} usersList={usersList} flow={flow} />
+      <Section
+        status="In Progress"
+        list={inProgress}
+        usersList={usersList}
+        flow={flow}
+      />
+      <Section status="Done" list={done} usersList={usersList} flow={flow} />
+      <Section
+        status="Cancelled"
+        list={cancelled}
+        usersList={usersList}
+        flow={flow}
+      />
     </div>
   );
 };

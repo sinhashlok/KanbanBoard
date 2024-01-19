@@ -14,7 +14,7 @@ const Cards = (props) => {
   let priority = item.priority;
   let icon = "";
 
-  switch (status) {
+  switch (item.status) {
     case "Todo":
       icon = <CircleOutlinedIcon fontSize="small" />;
       break;
@@ -59,11 +59,11 @@ const Cards = (props) => {
         {flow != 2 && <p className="card-username">{list.userName}</p>}
       </div>
       <div className="cards-body">
-        {flow == 2 && <div className="card-status">{icon}</div>}
+        {flow != 1 && <div className="card-status">{icon}</div>}
         <div className="card-task">{item.title}</div>
       </div>
       <div className="card-info">
-        <div className="card-priority">{priority}</div>
+        {flow != 3 && <div className="card-priority">{priority}</div>}
         <div className="card-tag">{item.tag}</div>
       </div>
     </div>

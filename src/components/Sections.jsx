@@ -41,6 +41,7 @@ const Section = (props) => {
       };
     }
   });
+  
 
   return (
     <div className="section">
@@ -54,7 +55,7 @@ const Section = (props) => {
                 {icon}
               </li>
             )}
-            <li>{flow == 2 ? newDataList[0].userName : status}</li>
+            <li>{flow == 2 ? list[0][0].userName : status}</li>
             <li style={{ color: "gray" }}>{list.length}</li>
           </ul>
         </div>
@@ -71,7 +72,21 @@ const Section = (props) => {
       </div>
 
       <div className="section-body">
-        {newDataList.map((item) => {
+        {
+          flow == 2 ? 
+          list[0].map((item) => {
+          return (
+            <Cards
+              key={item.id}
+              item={item}
+              flow={flow}
+              status={item.status}
+              list={item}
+            />
+          );
+          })
+           :
+          newDataList.map((item) => {
           return (
             <Cards
               key={item.id}
