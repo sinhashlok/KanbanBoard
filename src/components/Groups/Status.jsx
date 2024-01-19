@@ -1,7 +1,7 @@
 import Section from "../Sections";
 
 const Status = (props) => {
-  const { list, usersList } = props;
+  const { list, usersList, flow } = props;
   let backlog = [];
   let todo = [];
   let inProgress = [];
@@ -25,11 +25,11 @@ const Status = (props) => {
 
   return (
     <div className="status">
-      <Section status="Backlog" list={backlog} usersList={[]}/>
-      <Section status="Todo" list={todo} usersList={[]}/>
-      <Section status="In Progress" list={inProgress} usersList={[]}/>
-      <Section status="Done" list={done} usersList={[]}/>
-      <Section status="Cancelled" list={cancelled} usersList={[]}/>
+      <Section status="Backlog" list={backlog} usersList={usersList} flow={flow}/>
+      <Section status="Todo" list={todo} usersList={usersList} flow={flow}/>
+      <Section status="In Progress" list={inProgress} usersList={usersList} flow={flow}/>
+      <Section status="Done" list={done} usersList={usersList} flow={flow}/>
+      <Section status="Cancelled" list={cancelled} usersList={usersList} flow={flow}/>
     </div>
   );
 };

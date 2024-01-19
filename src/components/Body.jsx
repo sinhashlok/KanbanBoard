@@ -3,10 +3,10 @@ import { USER_API } from "../utils/constants";
 import Status from "./Groups/Status";
 import User from "./Groups/User";
 
-const Body = () => {
+const Body = (props) => {
+  const { flow } = props;
   const [dataList, setDataList] = useState([]);
   const [usersList, setUsersList] = useState([]);
-  const [flow, setFlow] = useState(1);
 
   useEffect(() => {
     async function fetchData() {
@@ -22,9 +22,9 @@ const Body = () => {
     <div className="body">
       <div className="sections">
         {flow == 1 ? (
-          <Status list={dataList} usersList={[]} />
+          <Status list={dataList} usersList={usersList} flow={flow} />
         ) : (
-          <User list={dataList} usersList={usersList} />
+          <User list={dataList} usersList={usersList} flow={flow}/>
         )}
       </div>
     </div>

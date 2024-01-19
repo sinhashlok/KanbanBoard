@@ -1,16 +1,17 @@
 import Section from "../Sections";
 
 const User = (props) => {
-  const { list, usersList } = props;
+  const { list, usersList, flow } = props;
   return (
     <div className="users">
       {list.map((item) => {
         return (
           <Section
             key={item.id}
-            status={item.userId}
+            status={item.status}
             list={[item]}
             usersList={usersList}
+            flow={flow}
           />
         );
       })}
