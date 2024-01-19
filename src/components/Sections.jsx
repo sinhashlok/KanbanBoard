@@ -41,7 +41,6 @@ const Section = (props) => {
       };
     }
   });
-  
 
   return (
     <div className="section">
@@ -72,31 +71,29 @@ const Section = (props) => {
       </div>
 
       <div className="section-body">
-        {
-          flow == 2 ? 
-          list[0].map((item) => {
-          return (
-            <Cards
-              key={item.id}
-              item={item}
-              flow={flow}
-              status={item.status}
-              list={item}
-            />
-          );
-          })
-           :
-          newDataList.map((item) => {
-          return (
-            <Cards
-              key={item.id}
-              item={item}
-              flow={flow}
-              status={status}
-              list={item}
-            />
-          );
-        })}
+        {flow == 2
+          ? list[0].map((item) => {
+              return (
+                <Cards
+                  key={item.id}
+                  item={item}
+                  flow={flow}
+                  status={item.status}
+                  list={item}
+                />
+              );
+            })
+          : newDataList.map((item) => {
+              return (
+                <Cards
+                  key={item.id}
+                  item={item}
+                  flow={flow}
+                  status={status}
+                  list={item}
+                />
+              );
+            })}
       </div>
     </div>
   );

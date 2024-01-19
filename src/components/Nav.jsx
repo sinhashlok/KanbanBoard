@@ -13,7 +13,11 @@ const Nav = (props) => {
   return (
     <nav className="nav-bar">
       <div className="dropdownMenu">
-        <select className="dropdown" value={selectedOption} onChange={handleSelectChange}>
+        <select
+          className="dropdown"
+          value={selectedOption}
+          onChange={handleSelectChange}
+        >
           <option value="" disabled>
             Select an option
           </option>
