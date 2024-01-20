@@ -6,15 +6,15 @@ const Dropdown = (props) => {
   const [selectedOption, setSelectedOption] = useState(1);
   const [isActive, setIsActive] = useState(false);
   const options = [
-    { label: "Group by: Status", value: 1 },
-    { label: "Group by: User", value: 2 },
-    { label: "Group by: Priority", value: 3 },
+    { label: "Status", value: 1 },
+    { label: "User", value: 2 },
+    { label: "Priority", value: 3 },
   ];
 
   return (
     <div className="dropdown">
       <div className="dropdown-btn" onClick={(e) => setIsActive(!isActive)}>
-        <div>{options[selectedOption - 1].label}</div>
+        <div>{`Group by: ${options[selectedOption - 1].label}`}</div>
         <div>
           <ArrowDropDownIcon />
         </div>
