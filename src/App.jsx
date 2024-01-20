@@ -1,9 +1,14 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Body from "./components/Body";
 import Nav from "./components/Nav";
 
 const App = () => {
-  const [flow, setFlow] = useState(1);
+  const [flow, setFlow] = useState(() => {
+    return JSON.parse(localStorage.getItem("flow"));
+  });
+  useEffect(() => {
+    localStorage.setItem("flow", flow);
+  }, [flow]);
 
   const handleDropdownChange = (selectedValue) => {
     setFlow(selectedValue);
