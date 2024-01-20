@@ -3,6 +3,7 @@ import { useState } from "react";
 
 const Dropdown = (props) => {
   const { selected, setSelected, onChange } = props;
+  const [selectedOption, setSelectedOption] = useState(1);
   const [isActive, setIsActive] = useState(false);
   const options = [
     { label: "Group by: Status", value: 1 },
@@ -13,7 +14,7 @@ const Dropdown = (props) => {
   return (
     <div className="dropdown">
       <div className="dropdown-btn" onClick={(e) => setIsActive(!isActive)}>
-        <div>{options[selected - 1].label}</div>
+        <div>{options[selectedOption - 1].label}</div>
         <div>
           <ArrowDropDownIcon />
         </div>
@@ -27,6 +28,7 @@ const Dropdown = (props) => {
                 className="dropdown-item"
                 onClick={(e) => {
                   setSelected(option.value);
+                  setSelectedOption(option.value);
                   setIsActive(false);
                   onChange(option.value);
                 }}
