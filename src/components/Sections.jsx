@@ -55,7 +55,7 @@ const Section = (props) => {
               </li>
             )}
             <li>{flow == 2 ? list[0][0].userName : status}</li>
-            <li style={{ color: "gray" }}>{list.length}</li>
+            <li style={{ color: "gray" }}>{flow == 2 ? list[0].length : list.length}</li>
           </ul>
         </div>
         <div className="section-head-right">
