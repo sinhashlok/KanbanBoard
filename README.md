@@ -1,8 +1,11 @@
-# React + Vite
+# Kaban Board
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### Setup
+1. npm install
+2. npm run dev
+- localhost:3000
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Whats the project?
+- Replicated Kaban Board, with functionality of Grouping by Users & Status, & Ordering by Priority
+- I get the data from API call, from which I get list of data for different tasks, and list of data of users.
+- Created a dropdown menu to switch between the flows.
